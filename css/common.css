@@ -1,0 +1,786 @@
+@charset "utf-8";
+/*---リセットとかの設定----------------------*/
+body,h1,h2,h3,h4,h5,p,ul,ol{
+	margin: 0;
+	padding: 0;
+}
+img {
+	border: none;
+	vertical-align: bottom;	
+}
+body{
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", "sans-serif";
+	font-size: 1em;
+}
+ul,ol{
+	list-style-type: none;
+}
+/*---ここまで、リセットとかの設定----------------------*/
+/*---header設定----------------------*/
+header{
+	background-color: #FFF;
+	position: relative;
+	height: 94px; /*js対応のため設定*/
+}
+header .inner{
+	padding-bottom: 10px;
+	overflow: hidden;
+	position: absolute;
+	z-index: 100;
+	background-color: rgba(250,250,250,0.70);
+	width: 100%;
+}
+
+/*ロゴ設定*/
+header h1{
+	float: left;
+	margin: 0 30px;
+	padding-top: 20px;
+}
+
+/*ナビゲーション設定*/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+	/*レスポンシブ対応？(初期設定されてた)*/
+/*  width: 60vw;*/
+/*  max-width: 1200px;*/
+  margin: 0 auto;
+  /*min-height: 100vh;*//*消すと1列に収まった*/
+}
+.button {
+  /*flex: 1 1 auto;*/
+ /* margin: 10px;*/
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+.button:after {
+  position: absolute;
+  transition: 0.3s;
+  content: '';
+  width: 0;
+  left: 50%;
+  bottom: 0;
+  height: 3px;
+  /*background: #F395E6;*/
+  background: #6AB2C1;
+}
+.button:hover {
+  cursor: pointer;
+}
+.button:hover:after {
+  width: 100%;
+  left: 0;
+}
+.button a{
+	text-decoration: none;
+	color: #000;
+}
+/*---ここまで、header設定----------------------*/
+/*---main・section設定----------------------*/
+main{
+	display:block; /*IE対策*/
+	position: relative; /*絶対配置用に設定(現状不要か…？)*/
+}
+
+.inner{ /*TOPページの要素を中央寄せするため設定*/
+	width: 1200px;
+	margin: 0 auto;
+	/*background-color: #FF484B;/*判別しやすくするため仮配色*/
+}
+
+section{
+	clear: both; /*要素の回り込み防止*/
+	}
+/*---ここまで、main・section設定----------------------*/
+/*---無料体験レッスン＆gotopの設定----------------------*/
+.pagetop{
+	position: fixed;
+	right: 0px;	
+	bottom: 40px;
+	display: none;
+}
+.pagetop p{
+	padding-top: 20px;
+}
+/*---ここまで、無料体験レッスン＆gotopの設定----------------------*/
+/*---footer設定----------------------*/
+footer{
+	background-color: #6AB2C1;
+	padding: 50px 0 30px;
+	color: #223E76;
+	text-align: center;
+	line-height: 1.5;
+}
+
+/*SNSアイコン括ってる*/
+footer .inner{
+	width: 520px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	overflow: hidden;
+	
+}
+/*SNSアイコン*/
+footer img{
+	float: left;
+	padding:0 20px;
+}
+/*footer ナビゲーション*/
+footer .link{
+	margin-bottom: 100px;
+	clear: both;
+}
+footer a{
+	color: #223E76;/*仮設定*/
+	text-decoration: none;
+}
+footer a:hover{
+	color: #fff;
+}
+/*---ここまで、footer設定----------------------*/
+/*---TOPページ設定----------------------*/
+/*main image*/
+.mainimage img{
+	width: 100%;
+	height: auto;
+}
+
+/*ほのむ英会話とは*/
+.info{
+	margin: 64px 0 30px;
+	padding: 10px 0;
+	text-align: center;
+}
+.info h2{
+	margin: 30px 0;
+}	
+.info p{
+	font-size: 1.2em;
+	line-height: 2.8;
+	margin-bottom: 50px;
+}
+/*ほのむ英会話とは　レッスン風景*/
+.info .inner{
+	width: 810px;
+	margin: 0 auto;
+	padding: 20px;
+	background-image: url(../img/backgroundimage01.png);
+	overflow: hidden;
+}
+.info .inner h3{
+	text-align: left;
+	padding-left: 20px;
+}
+.slide{     /*「レッスン風景」画像追加に伴い、いったん削除*/
+/*	overflow: hidden;
+	width: 810px;
+	margin: 0 auto;
+	background-image: url(../img/backgroundimage01.png);
+	padding: 0 20px;*/
+}
+.slide p{
+	float: left;
+}
+.slide img{
+	padding: 0 10px;
+	margin-top: 20px;
+}	
+/*レッスンについて*/
+.topic{
+	text-align: center;
+	margin: 50px 0;	
+}
+.topic h2{
+	padding: 20px 0 50px;
+
+}
+.topic .inner{      /*講師＆学習＆教材を中央寄せ*/
+	width: 1030px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+	overflow: hidden;
+	color: #fff;
+	line-height: 1.2;
+}
+/*レッスンについて　講師*/
+.topic .box1{
+	width: 280px;
+	background-color: #FFF;
+	float: left;
+	margin-left: 40px;
+	border: 2px solid #E4466E;
+}
+.topic .box1 h3{
+	background-image: url("../img/box01.png");
+	background-repeat: no-repeat;
+	height: 95px;
+	font-size: 1.8em;
+	padding-top: 30px
+}
+.topic .box1 .text{
+	margin: 15px 10px 5px;
+	background-color: #E4466E;
+	padding: 7px;
+	text-align: left;
+}
+/*レッスンについて　学習方法*/
+.topic .box2{
+	width: 280px;
+	background-color: #FFF;
+	float: left;
+	margin-left: 40px;
+	border: 2px solid #D0A727;
+}
+.topic .box2 h3{
+	background-image: url("../img/box02.png");
+	background-repeat: no-repeat;
+	height: 95px;
+	font-size: 1.8em;
+	padding-top: 30px
+}
+.topic .box2 .text{
+	margin: 15px 10px 5px;
+	background-color: #D0A727;
+	padding: 5px;
+	text-align: left;
+}
+/*レッスンについて　教材*/
+.topic .box3{
+	width: 280px;
+	background-color: #FFF;
+	float: left;
+	margin-left: 40px;
+	border: 2px solid #38B4B2;
+}
+.topic .box3 h3{
+	background-image: url("../img/box03.png");
+	background-repeat: no-repeat;
+	height: 95px;
+	font-size: 1.8em;
+	padding-top: 30px
+}
+.topic .box3 .text{
+	margin: 15px 10px 5px;
+	background-color: #38B4B2;
+	padding: 5px;
+	text-align: left;
+}
+/*「ほのむ」の由来*/
+.about{
+    overflow: hidden;
+    background-color: rgba(255,255,255,1.00);
+    width: 1000px;
+    padding: 50px 20px;
+    margin: 10px auto 0;
+}
+.about p{
+	/*padding: 0 10px;*/
+	font-size: 1.2em;
+	line-height: 1.8;
+}
+.about .photo p{
+	float: left;
+	padding: 0 20px;
+}
+.about h2{
+	padding: 30px 0;
+	margin-bottom: 20px;
+	text-align: center;
+}
+/*「ほのむ」の由来　講師の写真*/
+.about .photo {
+    width: 795px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    overflow: hidden;
+    background-color: rgba(56,180,178,0.25);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url(../img/backgroundimage01.png);
+}
+.about .photo h4 {
+    margin-left: 30px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    text-align: center;
+    font-weight: normal;
+    background-color: rgba(0,0,0,0.80);
+    width: 240px;
+    color: rgba(249,226,205,1.00);
+    border: 3px solid rgba(81,73,56,1.00);
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+/*アクセス*/
+.contact{
+	background-image: url(../img/backgroundimage.png);
+	padding: 20px 10px 150px;
+	background-position: 0% 30%;
+}
+.contact .background{
+	width: 800px;
+	background-color: rgba(250,250,250,0.70);
+	margin: 0 auto;
+	padding: 50px 10px;
+}
+.contact h2{
+	margin-bottom: 40px;
+	padding-top: 20px;
+	text-align: center;
+}
+.contact .map{
+	margin: 30px auto;
+	width: 600px;
+}
+.contact p{
+	line-height: 2.0;
+	padding-left: 100px;
+}
+/*---ここまで、TOPページ----------------------*/
+/*---ここから、サブページ・共通設定----------------------*/
+.subpage {
+    margin-bottom: 100px;
+}
+.subpage h2 {
+    padding: 30px 30px 30px 120px;
+    height: 50px;
+    color: #FFFFFF;
+    background-image: url(../img/subpage.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  
+}
+/*---ここまで、サブページ・共通設定----------------------*/
+/*---パンくずリスト設定----------------------*/
+.pan1 {
+    margin: 0;
+    padding-left: 0px;
+    list-style-type: none;
+	padding: 10px 0;
+}
+.pan1 li {
+    display: inline;
+    text-decoration: none;
+}
+.pan1 li a {
+    color: #000000;
+    text-decoration: none;
+}
+.pan1 li a:hover {
+    color: #38B4B2;
+    border-bottom: 1px solid #38B4B2;
+}
+
+.pan1 li+li:before {
+    content:">";
+}
+/*---ここまで、パンくずリスト設定----------------------*/
+/*---コース・受講料設定----------------------*/
+.content {
+    margin: 0 auto;
+    width: 1000px;
+}
+.money{
+	margin-left: 20px;
+}
+.money p{
+	padding: 20px;
+}
+.money p strong{
+	color: #E4466E;
+}
+.money table{
+	width: 660px;
+	margin: 0 auto;
+}
+.money th {
+    background-color: rgba(56,180,178,1.00);
+    width: 200px;
+	padding: 10px;
+	color: #fff;
+}
+.money td {
+    background-color: #FFD7F1;
+    text-align: center;
+}
+.course{
+	padding: 50px 0;
+	margin-left: 20px;
+}
+.course .content{
+	width: 660px;
+	margin: 0 auto;
+}
+.accordion1 .ac-a{
+    display: none;
+}
+
+.course li p {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    color: #FFFFFF;
+}
+.ac1 {
+    background-color: #38B4B2;
+    width: 660px;
+	margin-bottom: 10px;
+}
+
+.ac2 {
+    width: 660px;
+    background-color: #55BFBD;
+	margin-bottom: 10px;
+}
+.ac3 {
+    background-color: #6BC7C6;
+    width: 660px;
+	margin-bottom: 10px;
+}
+.ac4 {
+    background-color: #D0A727;
+    width: 660px;
+	margin-bottom: 10px;
+}
+.ac5 {
+    background-color: #E4466E;
+    width: 660px;
+	margin-bottom: 10px;
+}
+.ac6 {
+    background-color: #F095AC;
+    width: 660px;
+	margin-bottom: 10px;
+}
+.ac-a{
+	width: 620px;
+	padding: 10px;
+}
+/*---ここまで、コース・受講料設定----------------------*/
+/*---よくある質問設定----------------------*/
+.accordion1 .inner {
+    display: none;
+}
+
+.accordion1 .inner li{
+	padding: 0 0 1em 30px;
+	text-indent: -30px;
+}
+.accordion1 p {
+    cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.accordion1 img{
+  margin-right:5px;
+}
+
+.faq {
+    margin: 0 auto 30px;
+    width: 1000px;
+}
+
+.question {
+      margin: 0 auto 30px;
+    width: 800px;
+  
+}
+.question h3 {
+    border: 3px solid #6AB2C1;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 150px;
+}
+
+/*---ここまで、よくある質問設定----------------------*/
+/*---講師紹介設定----------------------*/
+.content .box1{
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+.content .box2{
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+.content .box3{
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+.content .box1 img{
+	position: absolute;
+	top: -50px;	
+	left: -100px;
+}
+.content .box2 img{
+	position: absolute;
+	top: -50px;	
+	left: -100px;
+}
+.content .box3 img{
+	position: absolute;
+	top: -50px;	
+	left: -100px;
+}
+.content .box1 h3{
+	background-color: rgba(56,180,178,0.70);
+	text-align: center;
+	color: #fff;
+	padding: 20px 0;
+}
+.content .box2 h3{
+	background-color: rgba(228,70,110,0.70);	
+	text-align: center;
+	color: #fff;
+	padding: 20px 0;
+}
+.content .box3 h3{
+	background-color: rgba(208,167,39,0.70);	
+	text-align: center;
+	color: #fff;
+	padding: 20px 0;
+}
+.content .box1 .text{
+	border: 5px solid #38B4B2;
+	margin: 100px 0;
+}
+.content .box2 .text{
+	border: 5px solid #E4466E;
+	margin: 100px 0;
+}
+.content .box3 .text{
+	border: 5px solid #D0A727;
+	margin: 100px 0;
+}
+.content .box1 .text p{
+	padding: 20px 50px;
+}
+.content .box2 .text p{
+	padding: 20px 50px;
+}
+.content .box3 .text p{
+	padding: 20px 50px;
+}
+.box1 .text p strong{
+	color: #38B4B2;
+}
+.box2 .text p strong{
+	color: #E4466E;
+}
+.box3 .text p strong{
+	color: #D0A727;
+}
+.box2 .text p strong{
+	color: #E4466E;
+}
+/*---ここまで、講師紹介設定----------------------*/
+/*---イベント設定----------------------*/
+.explain  {
+	width: 790px;
+    padding: 5px;
+	margin: 0 auto;
+}
+.triallesson p img {
+    width: 1000px;
+    height: 450px;
+    margin-top: 30px;
+}
+.event {
+    margin-top: 94px;
+}
+.event h4 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    border: 2px solid rgba(208,167,39,1.00);
+    background-color: rgba(208,167,39,1.00);
+    text-align: center;
+    line-height: 40px;
+    color: rgba(255,255,255,1.00);
+	float: left;
+}
+.event h5 {
+    font-size: large;
+    display: inline;
+	line-height: 2.8;
+	margin-left: 10px;
+}
+.event .box {
+    margin: 50px;
+    padding: 10px 10px 30px;
+    background-color: rgba(238,224,179,1.00);
+    overflow: hidden;
+}
+.box img {
+    margin-top: 30px;
+    margin-right: 10px;
+    display: inline-block;
+    float: right;
+}
+.eventtext {
+    float: left;
+    width: 60%;
+    margin-top: 40px;
+    margin-left: 50px;
+    margin-bottom: 40px;
+}
+.eventtext p{
+	clear: both;
+	padding-top: 1em;
+}
+.studyabroad {
+    margin-top: 94px;
+}
+.studyabroad .text{
+	width: 90%;
+	margin: 20px auto 50px;
+}
+
+.summer {
+    background-color: rgba(159,218,218,1.00);
+    width: 800px;
+    height: 400px;
+    border-radius: 400px / 200px;
+    margin: 0 auto 30px;
+    border: 1px solid rgba(159,218,218,1.00);
+}
+.summer img {
+    transform: rotate(-8deg);
+
+}
+.right {
+    width: 58%;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 110px;
+    margin-left: 10px;
+}
+.triallesson {
+    margin-top: 30px;
+}
+/*---ここまで、イベント設定----------------------*/
+/*---生徒さんの声設定----------------------*/
+.voice .box  {
+    border: 3px solid #6AB2C1;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+}
+.voice {
+	margin: 0 auto;
+	width: 930px;
+	min-width: 0px;
+}
+.student h3  {
+	margin-top: 50px;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 30px;
+}
+.parent h3 {
+	margin-top: 60px;
+	margin-right: 0;
+	margin-left: 0;
+	margin-bottom: 30px;
+
+}
+.voice .box img {
+	margin: 15px;
+	float: left;
+}
+.voice h4 {
+	margin: 15px 0;
+}
+.voice .box .text {
+	margin-top: 0;
+	margin-left: 130px;
+	margin-bottom: 15px;
+	min-width: 0px;
+	margin-right: 15px;
+}
+/*---ここまで、生徒さんの声設定----------------------*/
+/*---アクセス設定----------------------*/
+.content .access {
+	text-align: center;
+	padding-bottom: 5px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+.content .access h3 {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: left;
+	margin-left: 30px;
+
+}
+.access .add01 {
+	padding-top: 20px;
+	text-align: left;
+	margin: 0 auto;
+	width: 23em;
+	padding-left: auto;
+	padding-right: auto;
+	background-color: #FFFFFF;
+}
+.access .add02  {
+	padding: 0 auto;
+	margin-top: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 30px;
+	width: 28em;
+	font-size: small;
+	text-align: left;
+}
+.access .map {
+	border: 3px solid rgba(208,168,43,1.00);
+	margin: 0 auto;
+	width: 600px;
+}
+/*---ここまで、アクセス設定----------------------*/
+/*---受講規約設定----------------------*/
+.rule {
+    margin: 0 auto;
+    width: 800px;
+}
+.rule h3{
+    border: 1px solid #000000;
+    margin: 20px 5px;
+    padding: 10px;
+    width: auto;
+	border: 2px solid #6AB2C1;
+	border-radius: 10px;
+}
+.rule p{
+	padding: 0 20px;
+	margin: 10px 0 50px;
+	line-height: 1.8;
+}
+/*---ここまで、受講規約設定----------------------*/
